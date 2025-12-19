@@ -1,10 +1,14 @@
 import React from "react";
 import CodeExample, { HERO_AGENTS_MD } from "@/components/CodeExample";
 import GitHubIcon from "@/components/icons/GitHubIcon";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Hero() {
   return (
-    <header className="px-6 py-20 bg-gray-50 dark:bg-gray-900/40 border-b border-gray-100 dark:border-gray-800">
+    <header className="relative px-6 py-20 bg-gray-50 dark:bg-gray-900/40 border-b border-gray-100 dark:border-gray-800">
+      <div className="absolute right-6 top-6">
+        <ThemeToggle />
+      </div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/*
           On large screens we want the primary CTA buttons to align with the
