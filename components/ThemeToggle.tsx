@@ -20,7 +20,11 @@ export default function ThemeToggle() {
     setTheme(nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
     document.documentElement.style.colorScheme = nextTheme;
-    window.localStorage.setItem("theme", nextTheme);
+    try {
+      window.localStorage.setItem("theme", nextTheme);
+    } catch {
+      // Ignore localStorage write errors (e.g. blocked or unavailable).
+    }
   };
 
   const label = toggleLabels[theme];
